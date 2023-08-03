@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogster</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Josefin+Sans:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="toggleHandler.js" defer></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="container-title">
+                <h1 class="title">Blogster</h1>
+            </div>
+            <div class="signup-container">
+                <form action="/login" method="post" id="signup">
+                    <input type="text" name="firstname" id="firstname" placeholder="FirstName*" required>
+                    <input type="text" name="lastname" id="lastname" placeholder="LastName" value="">
+                    <input type="number" name="age" id="age" placeholder="Age" value="">
+                    <input type="email" name="email" id="email" placeholder="Email*" required>
+                    <input type="text" name="username" id="username" placeholder="Username*" required
+                        autocomplete="off">
+                    <label class="password-label">
+                        <input type="password" name="password" id="password" placeholder="Password*" required>
+                        <span class="material-symbols-outlined toggle" tabindex="0">visibility</span>
+                    </label>
+                    <input type="submit" value="Create Account">
+                </form>
+                <div id="login-text">
+                    <p class="login-title">Already have an account:</p>
+                    <a href="/login" value="SignUp" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

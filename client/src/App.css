@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: lightcoral;
+}
+
+.main {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: lightcoral;
+}
+
+.container {
+  background-color: lightgoldenrodyellow;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 5rem 10rem;
+  box-shadow: 30px 30px 1px -15px black;
+}
+
+.container .title {
+  font-size: 5rem;
+  font-family: 'Bungee Shade', cursive;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 5rem;
+}
+
+.login-container form,
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-container form input,
+.signup-container form input,
+.blog-form form input {
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: .5rem 1rem;
+  width: 80%;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  border-bottom: 1px solid transparent;
+}
+
+.login-container form input:hover:not(input[type='submit']),
+.signup-container form input:hover:not(input[type='submit']),
+.login-container form input:focus:not(input[type='submit']),
+.signup-container form input:focus:not(input[type='submit']),
+.blog-form form input:focus:not(input[type='submit']) {
+  border-bottom: 1px solid black;
+  transition: border .5s;
+}
+
+label {
+  padding: 0;
+  width: 80%;
+  /* background-color: blue; */
+  margin: 0 auto;
+  position: relative;
+}
+
+label input {
+  width: 100% !important;
+}
+
+#login input[type='submit'],
+#signup input[type='submit'],
+.blog-form form input[type='submit'] {
+  cursor: pointer;
+  background-color: lightseagreen;
+  color: white;
+}
+
+input[type='submit'],
+a {
+  animation: rev .4s normal backwards;
+  outline: none;
+  letter-spacing: 0px !important;
+}
+
+input[type='submit']:hover,
+input[type='submit']:focus,
+a:hover,
+a:focus {
+  /* transition: all .25s;
+    border-radius: 10px; */
+  animation: button .4s normal forwards;
+}
+
+@keyframes button {
+  0% {
+    border-radius: 0px;
+  }
+
+  100% {
+    border-radius: 10px;
+  }
+}
+
+@keyframes rev {
+  0% {
+    border-radius: 10px;
+  }
+
+  100% {
+    border-radius: 0px;
+  }
+}
+
+#signup-text,
+#login-text {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  place-items: center;
+  font-family: 'Josefin Sans', sans-serif;
+  gap: 1rem
+}
+
+.signup-title,
+.login-container-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.75);
+  letter-spacing: -1px;
+}
+
+#signup-link,
+#login-link {
+  text-decoration: none;
+  background-color: lightcoral;
+  color: white;
+  width: 100%;
+  padding: .5rem 1rem;
+  text-align: center;
+}
+
+main {
+  background-color: lightcoral;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+.blog-container-page {
+  background-color: lightgoldenrodyellow;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.blog-container-page .blog {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.blog-container-page .blog a {
+  text-decoration: none;
+  color: black;
+}
+
+.blog-container-page .blog-image img {
+  max-width: 350px;
+}
+
+.blog-container-page .blog-text {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.blog-container-page .blog-text .title {
+  font-size: 2rem;
+}
+
+.blog-container-page .blog-text .author {
+  font-size: .85rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 796px) {
+  .blog-container-page .blog {
+    flex-direction: column;
+    text-align: center;
+    min-width: 300px;
+  }
+
+  .blog-container-page .blog-image img {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .blog-container-page .blog-text .summary {
+    padding: 0 2rem;
+  }
+}
+
+nav {
+  background-color: lightcoral;
+}
+
+.links {
+  max-width: 1000px;
+  margin: auto;
+  background-color: lightgoldenrodyellow;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.links a {
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+  color: black;
+  font-size: 1.15rem;
+  border-bottom: 2px solid lightgoldenrodyellow;
+  padding: 5px 1rem;
+  cursor: pointer;
+}
+
+.links a:hover {
+  border-bottom: 2px solid black;
+  animation: none;
+  transition: border .3s;
+}
+
+.alert-container {
+  position: absolute;
+  background-color: gray;
+  z-index: 100;
+  height: 100vh;
+  width: 100vw;
+  background-color: #282727d8;
+  color: lightgray;
+  font-family: sans-serif;
+  font-size: 1.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.alert-container a {
+  color: lightgray;
+}
+
+.image-btn {
+  border: none;
+  background-color: lightslategray;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: .9rem;
+  width: max-content;
+  font-weight: bold;
+  color: white;
+}
+
+.blog-form .container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-form .container .title {
+  font-size: 4.5rem;
+}
+
+.blog-form .container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 8rem;
+}
+
+.blog-form .container form .imageDiv {
+  width: max-content;
+  margin: 5px auto 0 auto;
+  font-family: sans-serif;
+  font-size: .8rem;
+  font-style: italic;
+}
+
+.blog-form .container form input {
+  padding: 10px 1rem;
+  margin: 2rem auto;
+}
+
+.blog-form .container form .textBox {
+  padding: 1rem;
+}
+
+.textBox .ql-editor {
+  word-wrap: break-word;
+}
+
+.backBtn {
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+  padding: .5rem 2rem;
+}
+
+.post-page {
+  background-color: lightgoldenrodyellow;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: auto;
+  padding: 3rem 7rem;
+  font-family: sans-serif;
+  gap: 2rem;
+}
+
+.post-page img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.post-page .title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.post-page .content {
+  font-size: 1.25rem;
+}
+
+.post-page .editBtn {
+  text-decoration: none;
+  color: white;
+  background-color: lightseagreen;
+  padding: 10px 2rem;
+}
