@@ -28,9 +28,9 @@ export default function Navbar() {
         {username && (
           <>
             <Link to="/create">Create New Post</Link>
-            <a to="/login" onClick={logout}>
+            <Link to="/login" onClick={logout}>
               Logout
-            </a>
+            </Link>
           </>
         )}
         {!username && (

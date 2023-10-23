@@ -110,7 +110,7 @@ app.post("/create", uploadMiddleware.single("file"), (req, res) => {
 
 app.get("/blogs", (req, res) => {
   blogModel
-    .find()
+    .find({})
     .populate("author", ["username"])
     .sort({ createdAt: -1 })
     .limit(20)
@@ -122,7 +122,12 @@ app.get("/post/:id", (req, res) => {
   blogModel
     .findById(id)
     .populate("author", ["username"])
-    .then((response) => res.json(response))
+    .then((response) => res.json(response));
+});
+
+app.delete("/post/:id", (req, res) => {
+  const { id } = req.params;
+  blogModel.findByIdAndDelete(id).then((response) => res.json(response));
 });
 
 app.put("/post/:id", uploadMiddleware.single("file"), (req, res) => {

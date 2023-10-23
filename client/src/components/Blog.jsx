@@ -13,9 +13,11 @@ export default function Blog({
   return (
     <div className="blog">
       <div className="blog-image">
-        <Link to={`/post/${_id}`}>
+        {image && (
+          <Link to={`/post/${_id}`}>
           <img src={"http://localhost:4000/" + image} alt="blog" />
         </Link>
+          )}
       </div>
       <div className="blog-text">
         <Link to={`/post/${_id}`}>
